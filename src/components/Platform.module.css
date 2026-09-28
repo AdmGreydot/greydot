@@ -1,0 +1,24 @@
+.platform img{
+    height: 270px;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+.link{
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-h);
+}
+.content{
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.arrow{
+    display: inline-block;
+    transition: transform 0.25s ease;
+}
+.link:hover .arrow {
+    transform: translateX(6px);
+}

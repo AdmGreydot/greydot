@@ -1,0 +1,17 @@
+.wrap{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    align-items: center;
+    gap: 170px;
+    position: relative;
+}
+.wrap::after{
+    content: '';
+    width: 1px;
+    height: 70%;
+    position: absolute;
+    background-color: var(--border);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}

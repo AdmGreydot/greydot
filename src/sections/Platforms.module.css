@@ -1,0 +1,14 @@
+.section{
+    background-color: var(--bg2);
+    padding: 70px 0;
+}
+.head{
+    text-align: center;
+    max-width: 654px;
+    margin: 0 auto 46px;
+}
+.platforms{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: 40px;
+}

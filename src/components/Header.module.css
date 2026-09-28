@@ -1,0 +1,30 @@
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    transition:
+    background-color 0.3s ease,
+    backdrop-filter 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.scrolled{
+    background: rgba(245, 244, 240, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.wrap{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 111px;
+}
+.header ul{
+    color: var(--color-white);
+    transition: color 0.3s ease;
+}
+
+.scrolled ul {
+    color: var(--text-h);
+}

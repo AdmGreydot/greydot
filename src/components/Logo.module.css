@@ -1,0 +1,8 @@
+.logo{
+    display: block;
+    width: 90px;
+    height: 90px;
+}
+.logo img{
+    object-fit: contain;
+}
