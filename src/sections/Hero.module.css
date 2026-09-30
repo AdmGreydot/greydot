@@ -1,10 +1,9 @@
 .hero {
     position: relative;
     min-height: 100svh;
-    padding-top: 111px;
     box-sizing: border-box;
 
-    background: var(--color-gray) url(/banner.png) no-repeat fixed center / cover;
+    background: url(/banner.png) no-repeat fixed center / cover;
 
     display: flex;
     align-items: center;
@@ -15,7 +14,13 @@
     content: '';
     position: absolute;
     inset: 0;
-    background-color: rgba(0, 0, 0, .4);
+
+    background: radial-gradient(
+        circle clamp(300px, min(52vw, 70vh), 450px) at 50% 50%,
+        transparent 0,
+        transparent 100%,
+        rgba(0, 0, 0, .4) 100%
+    );
 }
 
 .wrap {
@@ -30,7 +35,7 @@
     height: min(600px, 65vh, 70vw);
 
     border-radius: 50%;
-    background-color: var(--color-gray);
+    background-color: var(--bg);
 
     display: flex;
     align-items: center;
@@ -63,12 +68,12 @@
 
 .side-text_left {
     top: clamp(30px, 8vh, 80px);
-    left: 0;
+    left: 30px;
 }
 
 .side-text_right {
     bottom: clamp(30px, 8vh, 80px);
-    right: 0;
+    right: 30px;
 }
 
 .circle svg {
@@ -89,5 +94,25 @@
 @media (max-height: 800px) {
     .side-text_left {
         top: 130px;
+    }
+}
+@media (max-width: 700px) {
+    .side-text{
+        display: none;
+    }
+}
+@media (max-width: 420px) {
+    .circle{
+        gap: 20px;
+        width: 350px;
+        height: 350px;
+    }
+    .circle svg{
+        height: 18px;
+    }
+}
+@media (max-width: 360px) {
+    .hero{
+        overflow-x:hidden;
     }
 }

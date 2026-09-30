@@ -15,3 +15,12 @@
     top: 50%;
     transform: translate(-50%,-50%);
 }
+@media (max-width: 700px) {
+    .wrap{
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 0;
+    }
+    .wrap::after{
+        display: none;
+    }
+}

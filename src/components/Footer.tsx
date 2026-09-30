@@ -12,7 +12,11 @@ export default function Footer(){
                         <p>Digitale løsninger<br/>
                         For en mere forbundet hverdag</p>
                     </div>
-                    <Navigation />
+                    <Navigation>
+                        <li><a href="#om-os">Om os</a></li>
+                        <li><a href="#platforme">Platforme</a></li>
+                        <li><a href="#historie">Historie</a></li>  
+                    </Navigation>
                 </div>
                 <div className={classes.copyright}>
                     <p>@ 2026 Greydot. Alle rettigheder forbeholdes</p>

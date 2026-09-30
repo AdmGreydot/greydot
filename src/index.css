@@ -105,3 +105,28 @@ section{
 section:last-of-type{
   margin-bottom: 0;
 }
+@media (max-width: 900px) {
+  body{
+    font-size: 18px;
+  }
+  h3{
+    font-size: 24px;
+  }
+  .eyebrow{
+    font-size: 16px;
+  }
+  
+}
+@media (max-width: 600px) {
+  section{
+    margin-bottom: 60px;
+  }
+}
+@media (max-width: 420px) {
+  h2{
+    font-size: 28px;
+  }
+  .eyebrow{
+    font-size: 12px;
+  }
+}

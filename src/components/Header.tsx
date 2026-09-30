@@ -4,6 +4,7 @@ import Logo from './Logo';
 import Navigation from './Navigation';
 export default function Header(){
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isOpened, setIsOpened] = useState(false);
     useEffect(() => {
         const handleScroll = () => {
           setIsScrolled(window.scrollY > 20);
@@ -15,12 +16,28 @@ export default function Header(){
           window.removeEventListener('scroll', handleScroll);
         };
       }, []);
+      function handleToggle(){
+        setIsOpened(prev=>!prev);
+      }
+      function handleClose(){
+        setIsOpened(false);
+      }
     return(
         <header className={`${classes.header} ${isScrolled?classes.scrolled:''}`}>
             <div className="container">
                 <div className={classes.wrap}>
                     <Logo />
-                    <Navigation/>
+                    <Navigation className={`${classes.menu} ${isOpened?classes['is-open']:''}`}>
+                        <li><a href="#om-os" onClick={handleClose}>Om os</a></li>
+                        <li><a href="#platforme"  onClick={handleClose}>Platforme</a></li>
+                        <li><a href="#historie" onClick={handleClose}>Historie</a></li>  
+                    </Navigation>
+
+                    <button className={`${classes.burger} ${isOpened?classes['is-open']:''}`} type="button" aria-label="Åbn menu" aria-expanded="false" aria-controls="main-menu" onClick={handleToggle}>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
             </div>
         </header>

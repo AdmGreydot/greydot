@@ -1,7 +1,9 @@
 .logo{
     display: block;
-    width: 90px;
-    height: 90px;
+    width: 70px;
+    height: 70px;
+    position: relative;
+    z-index: 20;
 }
 .logo img{
     object-fit: contain;
