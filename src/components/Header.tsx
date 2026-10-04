@@ -2,7 +2,10 @@ import classes from './Header.module.css';
 import { useEffect, useState } from 'react';
 import Logo from './Logo';
 import Navigation from './Navigation';
-export default function Header(){
+type HeaderProps={
+    isHomePage:boolean
+};
+export default function Header({isHomePage}:HeaderProps){
     const [isScrolled, setIsScrolled] = useState(false);
     const [isOpened, setIsOpened] = useState(false);
     useEffect(() => {
@@ -23,11 +26,11 @@ export default function Header(){
         setIsOpened(false);
       }
     return(
-        <header className={`${classes.header} ${isScrolled?classes.scrolled:''}`}>
+        <header className={`${classes.header} ${isHomePage?classes.home:''} ${isScrolled?classes.scrolled:''}`}>
             <div className="container">
                 <div className={classes.wrap}>
                     <Logo />
-                    <Navigation className={`${classes.menu} ${isOpened?classes['is-open']:''}`}>
+                    <Navigation className={`${isOpened?classes['is-open']:''}`}>
                         <li><a href="#om-os" onClick={handleClose}>Om os</a></li>
                         <li><a href="#platforme"  onClick={handleClose}>Platforme</a></li>
                         <li><a href="#historie" onClick={handleClose}>Historie</a></li>  

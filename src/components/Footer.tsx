@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import classes from './Footer.module.css'
 import Logo from './Logo';
 import Navigation from './Navigation';
@@ -15,7 +16,8 @@ export default function Footer(){
                     <Navigation>
                         <li><a href="#om-os">Om os</a></li>
                         <li><a href="#platforme">Platforme</a></li>
-                        <li><a href="#historie">Historie</a></li>  
+                        <li><a href="#historie">Historie</a></li> 
+                        <li><NavLink to="/kontakt-os">Kontakt os</NavLink></li>
                     </Navigation>
                 </div>
                 <div className={classes.copyright}>

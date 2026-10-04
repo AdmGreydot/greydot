@@ -1,0 +1,39 @@
+.form{
+    margin-top: 50px;
+}
+.row{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 15px;
+}
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 50px;
+    padding: 5px 30px;
+    background-color: var(--text);
+    color: var(--bg);
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+}
+.button span{
+    display: inline-block;
+    transition: transform 0.25s ease;
+    margin-left: 6px;
+}
+.button:hover span{
+    transform: translateX(6px);
+}
+
+@media (max-width: 500px) {
+    .row{
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 0;
+    }
+    .form{
+        margin-top: 20px;
+    }
+}

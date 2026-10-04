@@ -16,4 +16,7 @@
     .platforms{
         grid-template-columns: repeat(1, minmax(0,1fr));
     }
+    .section{
+        padding: 40px 0;
+    }
 }
