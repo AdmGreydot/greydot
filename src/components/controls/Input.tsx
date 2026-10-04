@@ -23,6 +23,9 @@ export default function Input({ label, required, ...props }: InputProps) {
             setInFocus(false);
         }
     }
+    function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+        setInFocus(!!e.target.value);
+    }
 
     return (
         <div className={classes.control}>
@@ -39,6 +42,7 @@ export default function Input({ label, required, ...props }: InputProps) {
                     ref={ref}
                     onFocus={handleFocus}
                     onBlur={handleBlur}
+                    onChange={handleChange}
                 />
             </label>
         </div>
