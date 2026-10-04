@@ -26,20 +26,17 @@ export default function ContactForm(){
                 },
                 body: JSON.stringify(data),
             });
-    
-            const text = await response.text();
+            
+            const result = await response.json();
+            
+            if (!response.ok) {
+                console.error('Failed to send email:', result.error);
+                return;
+            }
+            
+            console.log('Email sent:', result);
 
-console.log('API status:', response.status);
-console.log('API response:', text);
 
-if (!response.ok) {
-    console.error('Failed:', text);
-    return;
-}
-
-const result = text ? JSON.parse(text) : null;
-
-console.log('Email result:', result);
     
 
     
