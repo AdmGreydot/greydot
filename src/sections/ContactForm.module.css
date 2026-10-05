@@ -6,6 +6,36 @@
     grid-template-columns: repeat(2, minmax(0,1fr));
     gap: 15px;
 }
+.errors {
+    margin-bottom: 50px;
+    padding: 16px 20px;
+    border: 1px solid #D9A3A3;
+    background: #FBF3F3;
+    color: #A96A6A;
+}
+
+.errors p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.errors p + p {
+    margin-top: 4px;
+}
+.success {
+    margin-bottom: 30px;
+    padding: 16px 20px;
+    border: 1px solid #B8C8BC;
+    background: #F5F8F5;
+    color: #627568;
+}
+
+.success p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
 .button{
     display: flex;
     align-items: center;
@@ -26,6 +56,10 @@
 }
 .button:hover span{
     transform: translateX(6px);
+}
+.button:disabled,
+.button[disabled]{
+  opacity: .7;
 }
 
 @media (max-width: 500px) {
