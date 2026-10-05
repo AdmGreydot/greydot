@@ -7,7 +7,8 @@
     gap: 15px;
 }
 .errors {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+    transform: translateY(-25px);
     padding: 16px 20px;
     border: 1px solid #D9A3A3;
     background: #FBF3F3;
@@ -25,6 +26,7 @@
 }
 .success {
     margin-bottom: 30px;
+    transform: translateY(-25px);
     padding: 16px 20px;
     border: 1px solid #B8C8BC;
     background: #F5F8F5;
