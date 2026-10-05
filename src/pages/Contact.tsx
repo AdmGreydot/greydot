@@ -2,7 +2,8 @@ import classes from './Contact.module.css'
 import background from '../assets/history.png'
 import ContactForm from '../sections/ContactForm'
 export default function Contact(){
-    return (
+    return (<>
+        <title>Kontakt Os | Greydot</title>
         <section className={classes.section}>
             <div className="container">
                 <div className={classes.wrap}>
@@ -39,5 +40,5 @@ export default function Contact(){
                 </div>
             </div>
         </section>
-    )
+    </>)
 }
