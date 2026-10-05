@@ -35,7 +35,60 @@
 .burger {
     display: none;
 }
+.has-children{
+    position: relative;
+    padding-right: 25px;
+    cursor: pointer;
+}
+.chevron{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 4px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    transition: transform .2s ease;
+}
 
+.dropdown{
+    position: absolute;
+    list-style-type: none;
+    padding: 10px;
+    background: rgba(245, 244, 240, 0.75);
+    backdrop-filter: blur(12px);
+    color: var(--text-h);
+    z-index: 11;
+    top: calc(100% + 4px);  
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .2s ease;
+}
+.dropdown ul{
+    list-style-type: none;
+    padding: 0;
+}
+.dropdown li+li{
+    margin-top: 10px;
+}
+
+@media (min-width: 651px) {
+    .has-children::after {
+        content: '';
+        position: absolute;
+        top: 70%;
+        left: 0;
+        width: 100%;
+        height: 20px;
+    }
+    .has-children:hover .dropdown{
+        opacity: 1;
+        visibility: visible;
+    }
+    .has-children:hover .chevron{
+        transform: rotate(180deg);
+    }
+}
 @media (max-width: 650px) {
 
     .burger {
@@ -100,5 +153,63 @@
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
+    }
+
+    .has-children {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .dropdown {
+        position: static;
+        padding: 0;
+        display: grid;
+        grid-template-rows: 0fr;
+
+        width: 100%;
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transition:
+            grid-template-rows 0.3s ease,
+            margin 0.3s ease,
+            opacity 0.2s ease,
+            visibility 0s linear 0.3s;
+    }
+
+    .dropdown ul {
+        min-height: 0;
+        overflow: hidden;
+
+        margin: 0;
+        padding: 0;
+    }
+
+    .has-children.opened .dropdown {
+        grid-template-rows: 1fr;
+
+        margin-top: 20px;
+
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+
+        transition:
+            grid-template-rows 0.3s ease,
+            margin 0.3s ease,
+            opacity 0.2s ease;
+    }
+
+    .has-children ul li + li {
+        margin-top: 10px;
+    }
+
+    .has-children.opened .chevron {
+        transform: rotate(180deg);
     }
 }

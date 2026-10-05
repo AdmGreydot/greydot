@@ -12,7 +12,7 @@ export const PLATFORMS = [
     {
       id: 2,
       name: "Ejendelsregisteret",
-      description: "Registrér dine ting med billeder, serienumre og kvitteringer, og hav alle oplysninger samlet ét sted. Det giver dig et bedre overblik og gør det lettere at dokumentere dit ejerskab, hvis noget bliver væk eller stjålet.",
+      description: "Registrér dine ting med billeder, serienumre og kvitteringer, så du har alle oplysninger samlet ét sted. Få et bedre overblik og dokumentér dit ejerskab, hvis noget bliver væk eller stjålet.",
       image: ejendelsImage,
       link: "https://www.ejendelsregisteret.dk/",
     },
