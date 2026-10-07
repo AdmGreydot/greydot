@@ -5,7 +5,7 @@ export const PLATFORMS = [
     {
       id: 1,
       name: "Hittegodscentralen",
-      description: "Hittegodscentralen samler bortkomne og fundne ejendele ét sted. Her kan du efterlyse det, du har mistet, eller registrere noget, du har fundet – og gøre det lettere for tingene at finde tilbage til deres ejere.",
+      description: "Hittegodscentralen samler tabte og fundne ejendele ét sted. Her kan du efterlyse det, du har mistet, eller registrere noget, du har fundet – og gøre det lettere for tingene at finde tilbage til deres ejere.",
       image: hittegodsImage,
       link: "https://hittegodscentralen.dk/",
     },
@@ -19,7 +19,7 @@ export const PLATFORMS = [
     {
         id: 3,
         name: "StilX",
-        description: "StilX skaber en direkte forbindelse mellem kunstnere og mennesker, der gerne vil opdage og købe original kunst. En platform for værker med personlighed – og for kunstnere, der vil nå længere ud med det, de skaber.",
+        description: "StilX er en platform for værker med personlighed – og for kunstnere, der vil nå længere ud med det, de skaber.",
         image: stilxImage,
         link: "https://stilx.dk/",
       },

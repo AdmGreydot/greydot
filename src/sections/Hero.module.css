@@ -3,7 +3,7 @@
     min-height: 100svh;
     box-sizing: border-box;
 
-    background: url(/banner.png) no-repeat fixed center / cover;
+    background: url(/banner.png) no-repeat center / cover;
 
     display: flex;
     align-items: center;

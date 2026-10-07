@@ -22,7 +22,7 @@ export default function Footer(){
                 </div>
                 <div className={classes.bottom}>
                     <p className={classes.company}>
-                        Greydot ApS <br/> CVR: 34399131
+                        CVR: 34399131
                     </p>
                     <p >@ 2026 Greydot. Alle rettigheder forbeholdes</p>
                 </div>
