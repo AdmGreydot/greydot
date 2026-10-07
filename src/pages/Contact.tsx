@@ -1,9 +1,13 @@
 import classes from './Contact.module.css'
 import background from '../assets/history.png'
 import ContactForm from '../sections/ContactForm'
+import SEO from '../components/Seo'
 export default function Contact(){
     return (<>
-        <title>Kontakt Os | Greydot</title>
+        <SEO
+            title="Kontakt Os"
+            description="Kontakt Greydot, hvis du har spørgsmål eller ønsker at høre mere om vores digitale platforme."
+        />
         <section className={classes.section}>
             <div className="container">
                 <div className={classes.wrap}>
