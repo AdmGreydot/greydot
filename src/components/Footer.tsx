@@ -20,8 +20,11 @@ export default function Footer(){
                         <li><NavLink to="/kontakt-os">Kontakt os</NavLink></li>
                     </Navigation>
                 </div>
-                <div className={classes.copyright}>
-                    <p>@ 2026 Greydot. Alle rettigheder forbeholdes</p>
+                <div className={classes.bottom}>
+                    <p className={classes.company}>
+                        Greydot ApS <br/> CVR: 34399131
+                    </p>
+                    <p >@ 2026 Greydot. Alle rettigheder forbeholdes</p>
                 </div>
             </div>
         </footer>

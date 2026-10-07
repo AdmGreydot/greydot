@@ -32,6 +32,11 @@
     transition: color 0.3s ease;
 }
 @media (max-width: 650px) {
+    .menu{
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
     .header {
         position: fixed;
         inset: 0;
@@ -40,9 +45,6 @@
         height: 100dvh;
         left: 0;
 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         gap: 35px;
 
         margin: 0;

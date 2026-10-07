@@ -37,7 +37,7 @@ export default function Header({isHomePage}:HeaderProps){
             <div className="container">
                 <div className={classes.wrap}>
                     <Logo />
-                    <Navigation className={`${isOpened?classes['is-open']:''}`}>
+                    <Navigation className={`${isOpened?classes['is-open']:''}`} isHeader={true}>
                         <li><a href="#om-os" onClick={handleClose}>Om os</a></li>
                         <li className={`${classes["has-children"]} ${isOpenDropdown ? classes.opened : ''}`} onClick={toggleDropdown}>
                             <a href="#platforme"  onClick={handleClose}>Platforme</a>

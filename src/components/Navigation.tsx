@@ -7,7 +7,7 @@ type NavigationProps = {
 export default function Navigation({className, children, isHeader}:NavigationProps){
     return (
         <nav>
-            <ul className={`${classes.menu} ${isHeader ?? classes.header} ${className ?? className}`}>
+            <ul className={`${classes.menu} ${isHeader?classes.header:''} ${className?className:''}`}>
                 {children}
             </ul>
         </nav>

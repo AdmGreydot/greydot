@@ -18,13 +18,22 @@
 .footer ul{
     justify-content: center;
 }
-.copyright p{
-    text-align: center;
-    font-size: 18px;
+.bottom{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
+.bottom p{
+    color: var(--text-light);
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: 0.03em;
+}
+
 @media (max-width: 650px) {
     .wrap{
         justify-content: center;
+        flex-direction: column;
     }
     .logo{
         display: flex;
@@ -34,5 +43,10 @@
     }
     .footer{
         padding: 20px 0;
+    }
+    .bottom{
+        flex-direction: column;
+        gap: 5px;
+        align-items: center;
     }
 }
