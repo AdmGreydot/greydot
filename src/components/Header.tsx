@@ -46,7 +46,7 @@ export default function Header({isHomePage}:HeaderProps){
                             <ul>
                                 {PLATFORMS.map(platform=>
                                     <li key={platform.id}>
-                                        <a href={platform.link}>{platform.name}</a>
+                                        <a href={platform.link} target='_blank' rel="nofollow">{platform.name}</a>
                                     </li>
                                 )}
                             </ul>
