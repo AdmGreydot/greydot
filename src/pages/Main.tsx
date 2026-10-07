@@ -1,4 +1,4 @@
-import SEO from "../components/Seo";
+import SEO from "../components/SEO";
 import About from "../sections/About";
 import Concept from "../sections/Concept";
 import Hero from "../sections/Hero";
