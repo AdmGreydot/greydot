@@ -11,7 +11,8 @@ export default function JobForm(){
     const [fileResetKey, setFileResetKey] = useState(0);
     async function submitHandler(e: React.FormEvent<HTMLFormElement>){
         e.preventDefault();
-        const formData = new FormData(e.currentTarget);
+        const form = e.currentTarget;
+        const formData = new FormData(form);
         const name = formData.get("name") as string;
         const email = formData.get("email") as string;
         const phone = formData.get("phone") as string;
@@ -58,7 +59,7 @@ export default function JobForm(){
             }
         
             setIsSuccess(true);
-       
+            form.reset();
             setFileResetKey((key) => key + 1);
 
         } catch (error) {

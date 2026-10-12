@@ -9,7 +9,8 @@ export default function ContactForm(){
     const [isSuccess, setIsSuccess] = useState(false);
     async function submitHandler(e: React.FormEvent<HTMLFormElement>){
         e.preventDefault();
-        const formData = new FormData(e.currentTarget);
+        const form = e.currentTarget;
+        const formData = new FormData(form);
         const name = formData.get("name") as string;
         const email = formData.get("email") as string;
         const besked = formData.get("besked") as string;
@@ -58,6 +59,7 @@ export default function ContactForm(){
             }
         
             setIsSuccess(true);
+            form.reset();
 
         } catch (error) {
             setErrors(['Der opstod en fejl. Prøv venligst igen, eller kontakt os direkte på email.']);
