@@ -1,17 +1,21 @@
 import { useState } from 'react';
-import Input from '../components/controls/Input';
-import Textarea from '../components/controls/Textarea';
-import classes from './ContactForm.module.css'
+import Input from '../controls/Input';
+import Textarea from '../controls/Textarea';
+import classes from './JobForm.module.css';
+import FileUpload from '../controls/FileUpload';
 
-export default function ContactForm(){
+export default function JobForm(){
     const [isLoading, setIsLoading] = useState(false);
     const [errors, setErrors] = useState<string[]>([]);
     const [isSuccess, setIsSuccess] = useState(false);
+    const [fileResetKey, setFileResetKey] = useState(0);
     async function submitHandler(e: React.FormEvent<HTMLFormElement>){
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
         const name = formData.get("name") as string;
         const email = formData.get("email") as string;
+        const phone = formData.get("phone") as string;
+        const interesser = formData.get("interesser") as string;
         const besked = formData.get("besked") as string;
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         let errorsArr:string[]=[];
@@ -26,28 +30,24 @@ export default function ContactForm(){
         else if (!emailRegex.test(email)) {
             errorsArr.push('Indtast en gyldig e-mailadresse');
         }
+        if(phone.trim().length === 0 ){
+            errorsArr.push('Telefon er påkrævet');
+        }
+        if(interesser.trim().length === 0 ){
+            errorsArr.push('Hvad interesserer dig?');
+        }
         if(besked.trim().length === 0){
-            errorsArr.push('Besked er påkrævet');
+            errorsArr.push('Fortæl lidt om dig selv');
         }
         if(errorsArr.length>0){
             setErrors(errorsArr);
             return;
         }
         setIsLoading(true);
-        const data = {
-            name,
-            virksomhed: formData.get("virksomhed") as string,
-            email,
-            phone: formData.get("phone") as string,
-            besked,
-        }
         try {
-            const response = await fetch('/api/send-email', {
+            const response = await fetch('/api/send-application', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
+                body: formData,
             });
             
             const result = await response.json();
@@ -58,6 +58,8 @@ export default function ContactForm(){
             }
         
             setIsSuccess(true);
+            e.currentTarget.reset();
+            setFileResetKey((key) => key + 1);
 
         } catch (error) {
             setErrors(['Der opstod en fejl. Prøv venligst igen, eller kontakt os direkte på email.']);
@@ -77,19 +79,19 @@ export default function ContactForm(){
             )}
             {isSuccess && (
                 <div className={classes.success}>
-                    <p>Tak for din besked. Vi vender tilbage til dig hurtigst muligt.</p>
+                    <p>Tak for din ansøgning. Vi vender tilbage til dig hurtigst muligt.</p>
                 </div>
             )}
-            <div className={classes.row}>
-                <Input label="Navn" type="text" name="name" required/>
-                <Input label="Virksomhed" type="text" name="virksomhed"/>
-            </div>
+            <Input label="Fulde navn" type="text" name="name" required/>
             <div className={classes.row}>
                 <Input label="E-mail" type="email" name="email" required/>
-                <Input label="Telefon" type="tel" name="phone"/>
+                <Input label="Telefon" type="tel" name="phone" required/>
             </div>
-            <Textarea label="Besked" name="besked" required/>
-            <button type='submit' className={classes.button} disabled={isLoading}> Send besked <span>→</span></button>
+            <Input label="Hvad interesserer dig?" type="text" name="interesser" required/>
+            <Textarea label="Fortæl lidt om dig selv" name="besked" required/>
+            <Input label="Linkedin eller portfolio" type="text" name="link"/>
+            <FileUpload  key={fileResetKey}/>
+            <button type='submit' className={`btn ${classes.button}`} disabled={isLoading}> Send ansøgning <span>→</span></button>
         </form>
     );
 }

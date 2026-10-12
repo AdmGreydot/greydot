@@ -4,7 +4,7 @@ import Logo from './Logo';
 import Navigation from './Navigation';
 import { PLATFORMS } from '../data/platforms';
 type HeaderProps={
-    haveBg:boolean
+    haveBg?:boolean
 };
 export default function Header({haveBg}:HeaderProps){
     const [isScrolled, setIsScrolled] = useState(false);
