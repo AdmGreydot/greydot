@@ -4,8 +4,47 @@
     width: 100%;
     aspect-ratio: 16 / 9;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+.intro {
+    position: relative;
+    z-index: 2;
+
+    max-width: 390px;
+    width: 32%;
+    padding: clamp(12px, 3vw, 44px);
+
+    background: linear-gradient(
+        115deg,
+        rgba(245, 244, 240, 0.88) 0%,
+        rgba(245, 244, 240, 0.72) 65%,
+        rgba(245, 244, 240, 0.15) 100%
+    );
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    border-radius: 4px;
+}
+.introMob{
+    display: none;
 }
 
+.intro h2 {
+    margin: 0 0 10px;
+
+    font-size: clamp(1.5rem, 3vw, 2.8rem);
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+}
+
+.intro p {
+    margin: 0;
+
+    font-size: clamp(0.9rem, 1.05vw, 1rem);
+    line-height: 1.65;
+}
 .background {
     position: absolute;
     inset: 0;
@@ -115,5 +154,46 @@
 @media (prefers-reduced-motion: reduce) {
     .flow {
         animation: none;
+    }
+}
+
+@media (max-width: 700px) {
+    .tree {
+        aspect-ratio: 4 / 3;
+        min-height: 0;
+        align-items: flex-end;
+    }
+
+    .background {
+        object-position: 62% center;
+    }
+    .intro{
+        max-width: unset;
+        width: 55%;
+        transform: translateX(-25px);
+    }
+    
+    .node {
+        width: 8%;
+    }
+
+    .mainNode {
+        width: 11%;
+    }
+}
+@media (max-width: 540px) {
+    .tree{
+        margin-bottom: 0;
+    }
+    .intro{
+        width: calc(100% - 40px);
+        margin: 0 auto 20px;
+        transform: translateY(-15%);
+    }
+    .introDesk{
+        display: none;
+    }
+    .introMob{
+        display: block;
     }
 }

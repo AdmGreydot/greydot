@@ -6,3 +6,10 @@
 .logo img{
     object-fit: contain;
 }
+@media (max-width: 650px) {
+    .logo{
+        display: block;
+        width: 45px;
+        height: 45px;
+    }
+}

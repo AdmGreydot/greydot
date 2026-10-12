@@ -36,8 +36,14 @@ export default function PlatformTree() {
         }),
     );
 
-    return (
+    return (<>
         <section className={classes.tree}>
+            <div className="container">
+            <div className={`${classes.intro} ${classes.introDesk}`}>
+                <h2>Flere platforme. Én skabe idé.</h2>
+                <p>Greydot skaber digitale platforme, der forbinder mennesker, muligheder og viden - på tværs af brancher og hverdagsliv</p>
+            </div>
+            </div>
             <img
                 className={classes.background}
                 src="/tree.png"
@@ -124,5 +130,10 @@ export default function PlatformTree() {
                 </a>
             ))}
         </section>
+        <div className={`${classes.intro} ${classes.introMob}`}>
+            <h2>Flere platforme. Én skabe idé.</h2>
+            <p>Greydot skaber digitale platforme, der forbinder mennesker, muligheder og viden - på tværs af brancher og hverdagsliv</p>
+        </div>
+        </>
     );
 }
