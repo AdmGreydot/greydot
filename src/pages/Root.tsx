@@ -5,12 +5,23 @@ import ScrollToTop from "../components/ScrollToTop";
 
 export default function Root(){
     const { pathname } = useLocation();
+    let haveBg = false;
 
-    const isHomePage = pathname === "/";
+    switch(pathname){
+        case '/':
+            haveBg=true;
+            break;
+        case '/om-os':
+            haveBg=true;
+            break;
+        default:
+            haveBg=false;
+            break;
+    }
     return (
         <>
             <ScrollToTop/>
-            <Header isHomePage={isHomePage}/>
+            <Header haveBg={haveBg}/>
             <Outlet/>
             <Footer />
         </>

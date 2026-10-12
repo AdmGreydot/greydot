@@ -1,0 +1,119 @@
+.tree {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+.background {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: -2;
+}
+
+.connections {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.connections path {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.85);
+    stroke-width: 0.16;
+    stroke-linecap: round;
+    filter: drop-shadow(0 0 0.35px rgba(0, 0, 0, 0.35));
+}
+
+.node {
+    position: absolute;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    width: 6%;
+    height: auto;
+    aspect-ratio: 1;
+    transform: translate(-50%, -50%);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.node img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.node:hover {
+    transform: translate(-50%, -50%) scale(1.06);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.mainNode {
+    --node-color: #F2F1EE;
+    box-shadow:
+    0 0 12px rgba(232, 184, 92, 0.45),
+    0 0 28px rgba(232, 184, 92, 0.28),
+    0 0 50px rgba(232, 184, 92, 0.16);
+    width: 9%;
+    animation: heartGlow 4s ease-in-out infinite;
+}
+
+@keyframes heartGlow {
+    0%, 100% {
+        box-shadow:
+            0 0 12px rgba(232, 184, 92, 0.35),
+            0 0 28px rgba(232, 184, 92, 0.2),
+            0 0 45px rgba(232, 184, 92, 0.12);
+    }
+
+    50% {
+        box-shadow:
+            0 0 16px rgba(232, 184, 92, 0.6),
+            0 0 36px rgba(232, 184, 92, 0.35),
+            0 0 60px rgba(232, 184, 92, 0.2);
+    }
+}
+
+.connection {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.65);
+    stroke-width: 0.16;
+    stroke-linecap: round;
+}
+
+.flow {
+    fill: none;
+    stroke: #e8b85c;
+    stroke-width: 0.45;
+    stroke-linecap: round;
+    stroke-dasharray: 1 18;
+    animation: flowMove 3s linear infinite;
+    filter: drop-shadow(0 0 2px rgba(232, 184, 92, 0.8));
+}
+
+@keyframes flowMove {
+    to {
+        stroke-dashoffset: -38;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .flow {
+        animation: none;
+    }
+}

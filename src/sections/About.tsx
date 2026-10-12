@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import classes from './About.module.css';
 export default function About(){
     return (
@@ -10,6 +11,8 @@ export default function About(){
                     </div>
                     <div>
                         <p>Hos Greydot udvikler og driver vi digitale platforme, der skaber kontakt mellem mennesker – og mellem mennesker og samfundet. Vi tror på teknologi, der gør hverdagen enklere, mere tilgængelig og skaber nye muligheder for at hjælpe, handle og være i kontakt med hinanden.</p>
+                        <br/>
+                        <p><Link to="/om-os" className={classes.link} >Læs mere <span className={classes.arrow}>→</span></Link></p>
                     </div>
                 </div>
             </div>

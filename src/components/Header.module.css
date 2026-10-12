@@ -27,7 +27,7 @@
     height: 90px;
 }
 
-.home {
+.haveBg {
     color: var(--color-white);
 }
 
@@ -128,7 +128,7 @@
             transform 0.2s ease,
             opacity 0.2s ease;
     }
-    .home .burger span{
+    .haveBg .burger span{
         background: var(--color-white);
     }
 

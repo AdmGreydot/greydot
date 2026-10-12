@@ -13,7 +13,7 @@ export default function Platform({image, name, description, link}:PlatformProps)
             <div className={classes.content}>
                 <h4>{name}</h4>
                 <p>{description}</p>
-                <a href={link} className={classes.link}>SE PLATFORMEN <span className={classes.arrow}>→</span></a>
+                <a href={link} className={classes.link} target='_blank' rel='nofollow'>SE PLATFORMEN <span className={classes.arrow}>→</span></a>
             </div>
         </div>
     );

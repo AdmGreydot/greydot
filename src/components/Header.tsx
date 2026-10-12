@@ -4,9 +4,9 @@ import Logo from './Logo';
 import Navigation from './Navigation';
 import { PLATFORMS } from '../data/platforms';
 type HeaderProps={
-    isHomePage:boolean
+    haveBg:boolean
 };
-export default function Header({isHomePage}:HeaderProps){
+export default function Header({haveBg}:HeaderProps){
     const [isScrolled, setIsScrolled] = useState(false);
     const [isOpened, setIsOpened] = useState(false);
     const [isOpenDropdown, setIsOpenDropdown] = useState(false);
@@ -33,14 +33,14 @@ export default function Header({isHomePage}:HeaderProps){
         setIsOpened(false);
       }
     return(
-        <header className={`${classes.header} ${isHomePage?classes.home:''} ${isScrolled?classes.scrolled:''}`}>
+        <header className={`${classes.header} ${haveBg?classes.haveBg:''} ${isScrolled?classes.scrolled:''}`}>
             <div className="container">
                 <div className={classes.wrap}>
                     <Logo />
                     <Navigation className={`${isOpened?classes['is-open']:''}`} isHeader={true}>
-                        <li><a href="#om-os" onClick={handleClose}>Om os</a></li>
+                        <li><a href="/#om-os" onClick={handleClose}>Om os</a></li>
                         <li className={`${classes["has-children"]} ${isOpenDropdown ? classes.opened : ''}`} onClick={toggleDropdown}>
-                            <a href="#platforme"  onClick={handleClose}>Platforme</a>
+                            <a href="/#platforme"  onClick={handleClose}>Platforme</a>
                             <svg className={classes.chevron} xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" ><path d="m6 9 6 6 6-6"/></svg>
                             <div className={classes.dropdown}>
                             <ul>
@@ -52,7 +52,7 @@ export default function Header({isHomePage}:HeaderProps){
                             </ul>
                             </div>
                         </li>
-                        <li><a href="#historie" onClick={handleClose}>Historie</a></li>  
+                        <li><a href="/#historie" onClick={handleClose}>Historie</a></li>  
                     </Navigation>
 
                     <button className={`${classes.burger} ${isOpened?classes['is-open']:''}`} type="button" aria-label="Åbn menu" aria-expanded="false" aria-controls="main-menu" onClick={handleToggle}>
