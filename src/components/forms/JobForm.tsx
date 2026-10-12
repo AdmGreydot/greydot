@@ -58,7 +58,7 @@ export default function JobForm(){
             }
         
             setIsSuccess(true);
-            e.currentTarget.reset();
+       
             setFileResetKey((key) => key + 1);
 
         } catch (error) {
