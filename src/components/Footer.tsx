@@ -14,7 +14,7 @@ export default function Footer(){
                         For en mere forbundet hverdag</p>
                     </div>
                     <Navigation>
-                        <li><a href="/#om-os">Om os</a></li>
+                        <li><NavLink to="/om-os">Om os</NavLink></li>
                         <li><a href="/#platforme">Platforme</a></li>
                         <li><a href="/#historie">Historie</a></li> 
                         <li><NavLink to="/kontakt-os">Kontakt os</NavLink></li>

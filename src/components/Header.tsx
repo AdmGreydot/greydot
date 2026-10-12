@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import Logo from './Logo';
 import Navigation from './Navigation';
 import { PLATFORMS } from '../data/platforms';
+import { NavLink } from 'react-router-dom';
 type HeaderProps={
     haveBg?:boolean
 };
@@ -38,7 +39,7 @@ export default function Header({haveBg}:HeaderProps){
                 <div className={classes.wrap}>
                     <Logo />
                     <Navigation className={`${isOpened?classes['is-open']:''}`} isHeader={true}>
-                        <li><a href="/#om-os" onClick={handleClose}>Om os</a></li>
+                        <li><NavLink to="/om-os" onClick={handleClose}>Om os</NavLink></li>
                         <li className={`${classes["has-children"]} ${isOpenDropdown ? classes.opened : ''}`} onClick={toggleDropdown}>
                             <a href="/#platforme"  onClick={handleClose}>Platforme</a>
                             <svg className={classes.chevron} xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" ><path d="m6 9 6 6 6-6"/></svg>
