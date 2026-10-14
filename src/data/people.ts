@@ -1,21 +1,5 @@
 export const PEOPLE=[
     {
-        id:1,
-        name:"Roland Thorsen",
-        field:"CEO og Founder",
-        position:"Udvikler og grundlægger.",
-        email:"roland@greydot.dk",
-        image:"/roland.png"
-    },
-    {
-        id:2,
-        name:"Ea Korsgaard",
-        field:"Co-founder",
-        position:"Kickstarter på re-branding 2025.",
-        email:"ea@greydot.dk",
-        image:""
-    },
-    {
         id:3,
         name:"Karoline Larsen",
         field:"Markedsføring",
@@ -46,6 +30,21 @@ export const PEOPLE=[
         position:"Administration og økonomi.",
         email:"bilge@greydot.dk",
         image:"/Bilge-billede.jpg"
+    },
+    {
+        id:2,
+        name:"Ea Korsgaard",
+        field:"Co-founder",
+        position:"Kickstarter på re-branding 2025.",
+        email:"ea@greydot.dk",
+        image:""
+    },
+    {
+        id:1,
+        name:"Roland Thorsen",
+        field:"CEO og Founder",
+        position:"Udvikler og grundlægger.",
+        email:"roland@greydot.dk",
+        image:"/roland.png"
     }
-
 ]
