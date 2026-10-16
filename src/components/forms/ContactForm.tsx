@@ -15,6 +15,10 @@ export default function ContactForm(){
         const email = formData.get("email") as string;
         const besked = formData.get("besked") as string;
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const honeypot = formData.get("fax") as string;
+        if (honeypot) {
+            return;
+        }
         let errorsArr:string[]=[];
         setIsSuccess(false);
         setErrors([]);
@@ -82,6 +86,17 @@ export default function ContactForm(){
                     <p>Tak for din besked. Vi vender tilbage til dig hurtigst muligt.</p>
                 </div>
             )}
+
+            <div className={classes.field} aria-hidden="true">
+                <label htmlFor="fax">Fax</label>
+                <input
+                    id="fax"
+                    type="text"
+                    name="fax"
+                    autoComplete="off"
+                    tabIndex={-1}
+                />
+            </div>
             <div className={classes.row}>
                 <Input label="Navn" type="text" name="name" required/>
                 <Input label="Virksomhed" type="text" name="virksomhed"/>

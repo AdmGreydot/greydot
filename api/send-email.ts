@@ -10,8 +10,11 @@ export async function POST(request: Request) {
             email,
             phone,
             besked,
+            website
         } = await request.json();
-
+        if (website) {
+            return Response.json({ success: true });
+        }
         if (!name || !email || !besked) {
             return Response.json(
                 {
